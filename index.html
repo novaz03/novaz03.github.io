@@ -24,7 +24,7 @@
             margin: auto;
             overflow: hidden;
         }
-        .image-container {
+        .image-container, .video-container {
             background: #ffffff;
             padding: 20px;
             margin: 20px 0;
@@ -33,7 +33,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             position: relative;
         }
-        .image-container img {
+        .image-container img, .video-container video {
             width: 100%;
             max-width: 600px;
             height: auto;
@@ -41,7 +41,7 @@
             margin: auto;
             cursor: pointer;
         }
-        .image-container p {
+        .image-container p, .video-container p {
             text-align: center;
             margin: 10px 0 0;
             font-size: 1.2em;
@@ -68,6 +68,14 @@
             background: rgba(0, 0, 0, 0.7);
             z-index: 999;
         }
+        .video-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .video-container video {
+            max-width: 32%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +89,6 @@
             <img src="image1.png" alt="Visualization 1" onclick="zoomImage(this)">
             <p>Visualization 1: Result at the most detailed level, with description of the patent file in the right hand side</p>
         </div>
-
         <div class="image-container">
             <img src="image2.png" alt="Visualization 2" onclick="zoomImage(this)">
             <p>Visualization 2: The graph representation for the search results. Each node represents a patent file.</p>
@@ -90,7 +97,6 @@
             <img src="image3.png" alt="Visualization 3" onclick="zoomImage(this)">
             <p>Visualization 3: Result at a higher level. Each node represents a clustered group of patents.</p>
         </div>
-
         <div class="image-container">
             <img src="image4.png" alt="Visualization 6" onclick="zoomImage(this)">
             <p>Visualization 4: Details of a patent, and its connecting nodes in the graph.</p>
@@ -99,8 +105,30 @@
             <img src="image5.png" alt="Visualization 7" onclick="zoomImage(this)">
             <p>Visualization 5: Details of a node in the graph, with connections shown as edges between nodes.</p>
         </div>
+        <div class="video-row">
+            <div class="video-container">
+                <video controls>
+                    <source src="alpha2_test_1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video 1: Description of Video 1</p>
+            </div>
+            <div class="video-container">
+                <video controls>
+                    <source src="alpha2_test_2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video 2: Description of Video 2</p>
+            </div>
+            <div class="video-container">
+                <video controls>
+                    <source src="alpha2_test_3.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video 3: Description of Video 3</p>
+            </div>
+        </div>
     </div>
-
     <script>
         function zoomImage(img) {
             // Create overlay
@@ -125,4 +153,3 @@
     </script>
 </body>
 </html>
-
