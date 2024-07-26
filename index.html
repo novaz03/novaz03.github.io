@@ -31,6 +31,7 @@
             border: 1px solid #dddddd;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
         }
         .image-container img {
             width: 100%;
@@ -38,11 +39,34 @@
             height: auto;
             display: block;
             margin: auto;
+            cursor: pointer;
         }
         .image-container p {
             text-align: center;
             margin: 10px 0 0;
             font-size: 1.2em;
+        }
+        /* Zoomed image styles */
+        .zoomed {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
         }
     </style>
 </head>
@@ -54,28 +78,51 @@
     </header>
     <div class="container">
         <div class="image-container">
-            <img src="image1.png" alt="Visualization 1">
+            <img src="image1.png" alt="Visualization 1" onclick="zoomImage(this)">
             <p>Visualization 1: Result at the most detailed level, with description of the patent file in the right hand side</p>
         </div>
 
         <div class="image-container">
-            <img src="image2.png" alt="Visualization 2">
+            <img src="image2.png" alt="Visualization 2" onclick="zoomImage(this)">
             <p>Visualization 2: The graph representation for the search results. Each node represents a patent file.</p>
         </div>
         <div class="image-container">
-            <img src="image3.png" alt="Visualization 3">
+            <img src="image3.png" alt="Visualization 3" onclick="zoomImage(this)">
             <p>Visualization 3: Result at a higher level. Each node represents a clustered group of patents.</p>
         </div>
 
         <div class="image-container">
-            <img src="image4.png" alt="Visualization 6">
+            <img src="image4.png" alt="Visualization 6" onclick="zoomImage(this)">
             <p>Visualization 4: Details of a patent, and its connecting nodes in the graph.</p>
         </div>
         <div class="image-container">
-            <img src="image5.png" alt="Visualization 7">
+            <img src="image5.png" alt="Visualization 7" onclick="zoomImage(this)">
             <p>Visualization 5: Details of a node in the graph, with connections shown as edges between nodes.</p>
         </div>
     </div>
+
+    <script>
+        function zoomImage(img) {
+            // Create overlay
+            var overlay = document.createElement('div');
+            overlay.classList.add('overlay');
+            overlay.onclick = function() {
+                document.body.removeChild(overlay);
+                document.body.removeChild(zoomedImg);
+            };
+            document.body.appendChild(overlay);
+
+            // Create zoomed image
+            var zoomedImg = document.createElement('img');
+            zoomedImg.src = img.src;
+            zoomedImg.classList.add('zoomed');
+            zoomedImg.onclick = function() {
+                document.body.removeChild(overlay);
+                document.body.removeChild(zoomedImg);
+            };
+            document.body.appendChild(zoomedImg);
+        }
+    </script>
 </body>
 </html>
 
