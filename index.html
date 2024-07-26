@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,6 +76,12 @@
             max-width: 32%;
             height: auto;
         }
+        /* Larger default video sizes */
+        .video-container video {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -105,30 +111,32 @@
             <img src="image5.png" alt="Visualization 7" onclick="zoomImage(this)">
             <p>Visualization 5: Details of a node in the graph, with connections shown as edges between nodes.</p>
         </div>
-        <p>
-            Videos for the Graphical Search Engine by Euler Science
-        </p>>
+        <header>
+            <div class="container">
+                <h2>Videos</h2>
+            </div>
+        </header>
         <div class="video-row">
             <div class="video-container">
                 <video controls>
-                    <source src="alpha2_test_1.mov" type="video/mp4">
+                    <source src="alpha2_test_1.mov" type="video/mov">
                     Your browser does not support the video tag.
                 </video>
-                <p>Video 1: Description of Video 1</p>
+                <p>Video 1</p>
             </div>
             <div class="video-container">
                 <video controls>
-                    <source src="alpha2_test_2.mov" type="video/mp4">
+                    <source src="alpha2_test_2.mov" type="video/mov">
                     Your browser does not support the video tag.
                 </video>
-                <p>Video 2: Description of Video 2</p>
+                <p>Video 2</p>
             </div>
             <div class="video-container">
                 <video controls>
-                    <source src="alpha2_test_3.mov" type="video/mp4">
+                    <source src="alpha2_test_3.mov" type="video/mov">
                     Your browser does not support the video tag.
                 </video>
-                <p>Video 3: Description of Video 3</p>
+                <p>Video 3</p>
             </div>
         </div>
     </div>
