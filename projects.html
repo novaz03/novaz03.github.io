@@ -65,20 +65,33 @@
           <a href="https://github.com/novaz03/STAGE" target="_blank" rel="noopener">STAGE on GitHub</a>
         </p>
         <div class="card" style="margin-top:10px">
-          <h3 style="margin-top:0">Figure</h3>
-          <img src="stage.png" alt="STAGE project figure" loading="lazy" style="width:100%;height:auto;border-radius:8px" />
+          <h3 style="margin-top:0">Figures</h3>
+          <div class="gallery">
+            <img src="AE_Diagram.png" alt="STAGE AE diagram" loading="lazy" onclick="zoomImage(this)" />
+            <img src="POI_visualization_highdef.png" alt="STAGE POI visualization" loading="lazy" onclick="zoomImage(this)" />
+            <img src="pipeline.png" alt="STAGE pipeline" loading="lazy" onclick="zoomImage(this)" />
+          </div>
         </div>
         <div class="card" style="margin-top:10px">
-          <h3 style="margin-top:0">Interactive View</h3>
-          <p class="muted" style="margin-top:0">Embedded STAGE HTML (provided). If it does not render, open directly.</p>
-          <iframe class="embed" src="stage.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-          <p style="margin-top:8px"><a href="stage.html" target="_blank" rel="noopener">Open STAGE interactive in a new tab</a></p>
+          <h3 style="margin-top:0">Interactive Views</h3>
+          <p class="muted" style="margin-top:0">Embedded STAGE HTML (provided). If any embed is blocked by browser policies, use the direct links below.</p>
+          <div class="video-row">
+            <iframe class="embed" src="simulated_trajectories.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            <iframe class="embed" src="hourly_trajectories_by_person_with_dots.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            <iframe class="embed" src="ian_routes_visualization.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+          </div>
+          <p style="margin-top:8px">
+            Open directly: 
+            <a href="simulated_trajectories.html" target="_blank" rel="noopener">simulated_trajectories.html</a> · 
+            <a href="hourly_trajectories_by_person_with_dots.html" target="_blank" rel="noopener">hourly_trajectories_by_person_with_dots.html</a> · 
+            <a href="ian_routes_visualization.html" target="_blank" rel="noopener">ian_routes_visualization.html</a>
+          </p>
         </div>
       </div>
 
       <div id="pane-euler" class="pane card" role="tabpanel">
         <h2 style="margin-top:0">Euler Science — Graphical Search</h2>
-        <p>Visualization of graph-structured search results and node-level detail views.</p>
+        <p>Visualization of graph-structured search results and node-level detail views. For a full-page view, open the <a href="euler.html">Euler project page</a> or the <a href="demo.html">legacy demo</a>.</p>
         <div class="gallery" style="margin-top:8px">
           <img src="image1.png" alt="Visualization 1" loading="lazy" onclick="zoomImage(this)">
           <img src="image2.png" alt="Visualization 2" loading="lazy" onclick="zoomImage(this)">

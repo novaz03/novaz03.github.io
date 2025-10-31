@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Euler Science — Graphical Search</title>
+  <meta name="description" content="Organized gallery and videos for the Euler Science graphical search demo." />
+  <link rel="canonical" href="https://novaz03.github.io/euler.html" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    figure { margin: 0; }
+    figure img { width: 100%; height: auto; border-radius: 8px; cursor: pointer; }
+    figure figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 6px; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 999; }
+    .zoomed { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 96vw; max-height: 90vh; z-index: 1000; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .video-grid video { width: 100%; max-width: 720px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="max row">
+      <div class="brand">Sizhe (John) Zhang</div>
+      <nav class="nav">
+        <a href="index.html#about">About</a>
+        <a href="projects.html#euler">Projects</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#resume">Resume</a>
+        <a href="index.html#links">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="max">
+      <h1 style="margin:0 0 10px">Euler Science — Graphical Search</h1>
+      <div class="card" style="margin-bottom:14px">
+        <p style="margin:0">Visualization of graph-structured search results and node-level details, reorganized into a clean gallery with captions and video demos.</p>
+        <p style="margin:8px 0 0">
+          Prefer the original demo layout? See the <a href="demo.html">legacy demo</a>.
+        </p>
+      </div>
+
+      <div class="card" style="margin-bottom:14px">
+        <h2 style="margin-top:0">Gallery</h2>
+        <div class="gallery">
+          <figure>
+            <img src="image1.png" alt="Visualization 1: detailed result with patent description" loading="lazy" onclick="zoomImage(this)">
+            <figcaption>Visualization 1: Result at the most detailed level, with description of the patent file on the right.</figcaption>
+          </figure>
+          <figure>
+            <img src="image2.png" alt="Visualization 2: graph representation of search results" loading="lazy" onclick="zoomImage(this)">
+            <figcaption>Visualization 2: Graph representation for search results. Each node represents a patent file.</figcaption>
+          </figure>
+          <figure>
+            <img src="image3.png" alt="Visualization 3: higher-level clustering" loading="lazy" onclick="zoomImage(this)">
+            <figcaption>Visualization 3: Higher-level result where each node is a clustered group of patents.</figcaption>
+          </figure>
+          <figure>
+            <img src="image4.png" alt="Visualization 4: patent details with connections" loading="lazy" onclick="zoomImage(this)">
+            <figcaption>Visualization 4: Details of a patent, including connecting nodes in the graph.</figcaption>
+          </figure>
+          <figure>
+            <img src="image5.png" alt="Visualization 5: node details with edges" loading="lazy" onclick="zoomImage(this)">
+            <figcaption>Visualization 5: Node details in the graph, showing edges between related nodes.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0">Videos</h2>
+        <div class="video-grid">
+          <div>
+            <video controls preload="metadata">
+              <source src="alpha2_test_1.mov" type="video/quicktime">
+              <source src="alpha2_test_1.mov">
+              Your browser does not support embedded video.
+            </video>
+            <p class="muted">If playback fails, <a href="alpha2_test_1.mov" download>download the file</a>.</p>
+          </div>
+          <div>
+            <video controls preload="metadata">
+              <source src="alpha2_test_2.mov" type="video/quicktime">
+              <source src="alpha2_test_2.mov">
+              Your browser does not support embedded video.
+            </video>
+            <p class="muted">If playback fails, <a href="alpha2_test_2.mov" download>download the file</a>.</p>
+          </div>
+          <div>
+            <video controls preload="metadata">
+              <source src="alpha2_test_3.mov" type="video/quicktime">
+              <source src="alpha2_test_3.mov">
+              Your browser does not support embedded video.
+            </video>
+            <p class="muted">If playback fails, <a href="alpha2_test_3.mov" download>download the file</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="max">
+      <small>© <span id="year"></span> Sizhe (John) Zhang</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function zoomImage(img) {
+      const overlay = document.createElement('div');
+      overlay.className = 'overlay';
+      overlay.onclick = () => { document.body.removeChild(overlay); document.body.removeChild(zoomed); };
+      document.body.appendChild(overlay);
+      const zoomed = document.createElement('img');
+      zoomed.src = img.src; zoomed.className = 'zoomed';
+      zoomed.onclick = () => { document.body.removeChild(overlay); document.body.removeChild(zoomed); };
+      document.body.appendChild(zoomed);
+    }
+  </script>
+</body>
+</html>
+
