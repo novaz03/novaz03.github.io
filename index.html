@@ -1,159 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizations</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .image-container, .video-container {
-            background: #ffffff;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid #dddddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        .image-container img, .video-container video {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: auto;
-            cursor: pointer;
-        }
-        .image-container p, .video-container p {
-            text-align: center;
-            margin: 10px 0 0;
-            font-size: 1.2em;
-        }
-        /* Zoomed image styles */
-        .zoomed {
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 100%;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-        }
-        .video-row {
-            display: flex;
-            justify-content: space-between;
-        }
-        .video-container video {
-            max-width: 49%;
-            height: auto;
-        }
-        /* Larger default video sizes */
-        .video-container video {
-            width: 100%;
-            max-width: 750px;
-            height: auto;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sizhe (John) Zhang — Personal Site</title>
+  <meta name="description" content="Sizhe (John) Zhang — projects, education, and PhD interests." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Demo of the Graphical Search Engine by Euler Science</h1>
-        </div>
-    </header>
-    <div class="container">
-        <div class="image-container">
-            <img src="image1.png" alt="Visualization 1" onclick="zoomImage(this)">
-            <p>Visualization 1: Result at the most detailed level, with description of the patent file in the right hand side</p>
-        </div>
-        <div class="image-container">
-            <img src="image2.png" alt="Visualization 2" onclick="zoomImage(this)">
-            <p>Visualization 2: The graph representation for the search results. Each node represents a patent file.</p>
-        </div>
-        <div class="image-container">
-            <img src="image3.png" alt="Visualization 3" onclick="zoomImage(this)">
-            <p>Visualization 3: Result at a higher level. Each node represents a clustered group of patents.</p>
-        </div>
-        <div class="image-container">
-            <img src="image4.png" alt="Visualization 6" onclick="zoomImage(this)">
-            <p>Visualization 4: Details of a patent, and its connecting nodes in the graph.</p>
-        </div>
-        <div class="image-container">
-            <img src="image5.png" alt="Visualization 7" onclick="zoomImage(this)">
-            <p>Visualization 5: Details of a node in the graph, with connections shown as edges between nodes.</p>
-        </div>
-        <header>
-            <div class="container">
-                <h2>Videos</h2>
-            </div>
-        </header>
-        <div class="video-row">
-            <div class="video-container">
-                <video controls>
-                    <source src="alpha2_test_1.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p>Video 1</p>
-            </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="alpha2_test_2.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p>Video 2</p>
-            </div>
-        </div>
+  <header class="site">
+    <div class="max row">
+      <div class="brand">Sizhe (John) Zhang</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#resume">Resume</a>
+        <a href="#links">Links</a>
+      </nav>
     </div>
-    <script>
-        function zoomImage(img) {
-            // Create overlay
-            var overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            overlay.onclick = function() {
-                document.body.removeChild(overlay);
-                document.body.removeChild(zoomedImg);
-            };
-            document.body.appendChild(overlay);
+  </header>
 
-            // Create zoomed image
-            var zoomedImg = document.createElement('img');
-            zoomedImg.src = img.src;
-            zoomedImg.classList.add('zoomed');
-            zoomedImg.onclick = function() {
-                document.body.removeChild(overlay);
-                document.body.removeChild(zoomedImg);
-            };
-            document.body.appendChild(zoomedImg);
-        }
-    </script>
+  <main>
+    <section id="about" class="hero">
+      <div class="card">
+        <h1 style="margin-top:0">Hi, I’m Sizhe (John) Zhang.</h1>
+        <p class="blurb">
+          I’m an Operations & Systems Specialist at the Washington University School of Medicine (RCIF),
+          supporting biomedical and medical-imaging research and managing servers/data workflows. I also
+          collaborate with Prof. Nan Lin’s Geospatial AI group on large-scale statistical ML for mobility
+          and clinical datasets, and previously worked with Prof. Chenguang Wang on LLM-based automated
+          math proving.
+        </p>
+        <p class="blurb"><strong>I’m seeking PhD opportunities</strong> in machine learning and AI, with interests in
+          robust generalization, uncertainty, reasoning with LLMs, and scientific/geospatial ML. If there’s a potential fit,
+          I’d love to connect.</p>
+        <div class="cta">
+          <a class="btn primary" href="#resume">View Resume</a>
+          <a class="btn" href="#projects">Explore Projects</a>
+          <a class="btn" href="#links">Contact & Links</a>
+        </div>
+        <div class="chips">
+          <span class="chip">ML / Statistics</span>
+          <span class="chip">LLMs & Reasoning</span>
+          <span class="chip">Geospatial AI</span>
+          <span class="chip">HPC / Systems</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0">Current Roles</h2>
+        <ul>
+          <li>Operations & Systems Specialist — RCIF, WashU School of Medicine</li>
+          <li>Research collaborator — Geospatial AI (Prof. Nan Lin)</li>
+        </ul>
+        <p class="muted" style="margin-top:10px">Email: <a href="mailto:sizhe@wustl.edu">sizhe@wustl.edu</a></p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 style="margin-top:0">AIGlucose</h3>
+          <p>Evaluation-first toolkit for plain-language, evidence-linked explanations of glucose patterns, with domain
+            retrieval and factuality checks.</p>
+          <p>
+            <a href="https://github.com/novaz03/AIGlucose" target="_blank" rel="noopener">GitHub</a>
+            • <a href="https://huggingface.co/SizheZ03/AIGlucose" target="_blank" rel="noopener">Hugging Face</a>
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Geospatial AI for Mobility & Clinical Data</h3>
+          <p>Spatio-temporal modeling of mobility under extreme weather and clinical driving behavior; scalable ETL,
+            uncertainty-aware clustering, and causal analyses.</p>
+          <p class="muted">Collaboration with Prof. Nan Lin’s group (WashU).</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">LLM Reasoning & Automated Math Proving</h3>
+          <p>Proof-tree structures, intermediate verification, and dataset quality for long-chain reasoning; evaluation harnesses
+             to stabilize chain-of-thought.</p>
+          <p class="muted">Research with Prof. Chenguang Wang.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Graphical Search Engine (Demo)</h3>
+          <p>Visualization of graph-structured search results and node-level detail views.</p>
+          <p><a href="demo.html">Open demo</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 style="margin-top:0">Washington University in St. Louis</h3>
+          <p>A.M. in Statistics (GPA 3.95/4.00)</p>
+          <p class="muted">Aug 2023 — Dec 2024 • St. Louis, MO</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">University of Cambridge</h3>
+          <p>B.A. (Hons) in Natural Sciences (Physics, Chemistry, Math)</p>
+          <p class="muted">Sep 2020 — Jun 2023 • Cambridge, UK</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>View the latest version of my resume:</p>
+        <ul>
+          <li><a href="resume.html">Resume (HTML)</a></li>
+          <li><a href="resume.tex">Source (LaTeX)</a></li>
+        </ul>
+        <p class="muted">If you prefer PDF, I can share it on request or we can add it to this site.</p>
+      </div>
+    </section>
+
+    <section id="links">
+      <h2>Links</h2>
+      <div class="card">
+        <ul>
+          <li><a href="https://www.linkedin.com/in/sizhe-zhang-5ba571292/overlay/about-this-profile/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/novaz03" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://huggingface.co/SizheZ03/AIGlucose" target="_blank" rel="noopener">Hugging Face: AIGlucose</a></li>
+          <li><a href="mailto:sizhe@wustl.edu">sizhe@wustl.edu</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="max">
+      <small>© <span id="year"></span> Sizhe (John) Zhang</small>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
