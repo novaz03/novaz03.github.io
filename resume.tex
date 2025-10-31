@@ -1,0 +1,203 @@
+%-------------
+% Research-Oriented CV (2-page friendly)
+% Author : Sizhe (John) Zhang
+% License: MIT
+%------------
+
+\documentclass[letterpaper,10.8pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear header/footer
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------
+% Custom commands
+\newcommand{\resumeItem}[2]{\item\small{\textbf{#1}{: #2 \vspace{-2pt}}}}
+\newcommand{\resumeItemWithoutTitle}[1]{\item\small{{#1\vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-0pt}\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%----------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%-----HEADING---------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Sizhe (John) Zhang}} & Email: \href{mailto:sizhe@wustl.edu}{sizhe@wustl.edu} \\
+  Mobile: +1 (314) 978-5700 & Website: \href{https://github.com/novaz03}{https://github.com/novaz03} \\ & GitHub Page: \href{https://github.com/novaz03}{https://github.com/novaz03}
+  \multicolumn{2}{l}{} \\
+\end{tabular*}
+
+%------RESEARCH INTERESTS---------
+\section{Research Interests}
+\resumeSubHeadingListStart
+  \resumeItemWithoutTitle{\textbf{Statistical Machine Learning:} robust/OO\!D generalization, uncertainty quantification, distribution shift, causal inference.}
+  \resumeItemWithoutTitle{\textbf{Scientific ML \& Geospatial AI:} spatio-temporal statistics, mobility modeling under extremes, physics-/principle-informed learning.}
+  \resumeItemWithoutTitle{\textbf{Optimization \& Computation:} large-scale training/evaluation, HPC/parallel computing (Slurm, Apptainer), numerical methods for AI.}
+  \resumeItemWithoutTitle{\textbf{Reasoning \& LLMs:} data quality and evaluation for theorem proving/chain-of-thought; hybrid probabilistic–neural methods.}
+\resumeSubHeadingListEnd
+
+%------EDUCATION---------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Washington University in St.\ Louis (WashU)}{St.\ Louis, MO}
+    {A.M.\ in Statistics \;(\emph{GPA 3.95/4.00})}{Aug 2023 -- Dec 2024}
+  \resumeItemListStart
+    \resumeItemWithoutTitle{\emph{Selected coursework:} Theory of Statistics, Nonparametric Estimation, Advanced Machine Learning, Linear Models, Mathematical Foundations of Big Data.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {University of Cambridge}{Cambridge, UK}
+    {B.A.\ (Hons) in Natural Sciences}{Sep 2020 -- Jun 2023}
+  \resumeItemListStart
+    \resumeItemWithoutTitle{\emph{Selected coursework:} Statistics, Linear Algebra, Group Theory, Quantum Mechanics, Electromagnetism, Condensed Matter Physics, Special Relativity.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%------PUBLICATIONS & MANUSCRIPTS (do not fabricate; replace placeholders)---------
+\section{Publications \& Manuscripts}
+\resumeSubHeadingListStart
+  \resumeItemWithoutTitle{\textbf{Manuscripts submitted (details on request):} spatial statistics and scientific ML projects on (i) multimodal human mobility under extreme weather and (ii) clinical driving behavior in preclinical Alzheimer's disease.}
+  % Example (replace with real citations if available):
+  % \resumeItemWithoutTitle{Zhang, S.\ et al.\ (2025). \emph{Title of the mobility manuscript}. Under review.}
+  % \resumeItemWithoutTitle{Zhang, S.\ et al.\ (2025). \emph{Title of the clinical AD manuscript}. Under review.}
+\resumeSubHeadingListEnd
+
+%------RESEARCH EXPERIENCE---------
+\section{Research Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Geospatial Hazard Research Team (Prof.\ Nan Lin; collaborators across WashU)}{St.\ Louis, MO}
+    {Graduate Researcher}{May 2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Geospatial AI for Disaster Response}{Constructed high-resolution, hexagon-based spatio-temporal mobility datasets; integrated POI semantics and graph embeddings to study pre-/post-event behavioral change under hurricanes.}
+    \resumeItem{Methods}{Uncertainty-aware clustering and causal analyses for distribution shift; scalable ETL and quality control pipelines for heterogeneous mobility/POI/socioeconomic data.}
+    \resumeItem{Impact}{Produced decision-support summaries for evacuation vs.\ shelter-in-place patterns and critical infrastructure access; documented reproducible pipelines for multi-terabyte data.}
+    \resumeItem{Stack}{Python (GeoPandas, PyTorch, scikit-learn), PostGIS, QGIS; HPC (Slurm arrays, Apptainer/Singularity)}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {DRIVES Project (Clinical AI; PI: Dr.\ Ganesh M.\ Babulal)}{St.\ Louis, MO}
+    {Researcher}{2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Clinical Time-Series Modeling}{Analyzed naturalistic driving data to quantify effects of preclinical Alzheimer's disease on mobility/risk; built robust feature pipelines with rigorous validation.}
+
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Automated Theorem Proving \& Reasoning AI}{St.\ Louis, MO}
+    {Graduate Research Assistant}{Feb 2024 -- Present}
+  \resumeItemListStart
+    \resumeItem{Whole-Proof Generation}{Designed proof-tree data structures and intermediate verification to stabilize long-chain reasoning; established metrics for data completeness/consistency.}
+    \resumeItem{LLM Data Quality}{Developed versioned pipelines for reasoning datasets (Lean4) with anomaly detection; documented best practices to reduce leakage and spurious correlations.}
+    \resumeItem{Stack}{Python, Lean4, Git/DVC; evaluation harnesses for chain-of-thought.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Aviation Impact Accelerator (Business \& Policy Group)}{Cambridge, UK}
+    {Undergraduate Researcher}{Jun 2022 -- Sep 2022}
+  \resumeItemListStart
+    \resumeItem{Techno-Economic Modeling}{Integrated fuel/material flow and capital cost data; built regression-based operating cost models and scenario tools for decision support.}
+    \resumeItem{Stack}{MATLAB, R, interactive reporting in Excel/Markdown.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%------RESEARCH-RELEVANT PROFESSIONAL APPOINTMENTS---------
+\section{Research-Adjacent Roles}
+\resumeSubHeadingListStart
+\resumeSubheading
+  {Operations \& Systems Specialist I (Radiology)}{St.\ Louis, MO}
+  {Washington University School of Medicine}{Apr 2025 -- Present}
+\resumeItemListStart
+  \resumeItem{AI Model Development \& Deployment}{
+    Co-developed LLM components for patient-facing clinical workflows (retrieval-augmented generation, prompt schemas, safety filters); implemented PEFT/LoRA training pipelines and lightweight adapters for domain adaptation; stood up evaluation harnesses for factuality/hallucination, uncertainty proxies, and regression tests against reference corpora.}
+  \resumeItem{Large-Scale Training \& HPC}{
+    Orchestrated distributed jobs on Slurm (arrays, GPU/CPU mix), profiled throughput and memory (mixed precision, gradient accumulation), and containerized stacks (Docker/Apptainer) with \texttt{lmod} modules for reproducible builds. }
+
+\resumeItemListEnd
+
+
+
+  \resumeSubheading
+    {Teaching Assistant}{St.\ Louis, MO}
+    {Washington University in St.\ Louis}{Jan 2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Courses}{Python for Data Science, Stochastic Processes, Mathematical Foundations of Big Data; led tutorials, office hours, and assessment design.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%------SELECTED PROJECTS (brief, research-facing)---------
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeItem{Mobility Graph Embeddings under Extreme Events}{Node2Vec/LLM-derived POI embeddings on EPSG:5070 hex grids; clustering trajectories over 143-hour windows; evaluation under distribution shift.}
+  \resumeItem{Automated Theorem Proving \& Reasoning AI}{Leakage audits, adversarial paraphrases, influence-function diagnostics, and proof-tree data structures for long-chain reasoning datasets (Lean4); versioned pipelines and evaluation harnesses for chain-of-thought stability.}
+  \resumeItem{Reasoning Dataset Curation}{Leakage audits, adversarial paraphrases, and influence-function diagnostics for long-chain proof corpora.}
+  
+  \resumeItem{AIGlucose}{
+    Led the \href{https://github.com/novaz03/AIGlucose}{AIGlucose} project: an evaluation-first toolkit for plain-language, evidence-linked explanations of glucose patterns. Integrated domain-specific retrieval, span-level evidence display, and a factuality checker.}
+\resumeSubHeadingListEnd
+
+%------TECHNICAL & METHODS---------
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \resumeItem{Languages}{Python, R, MATLAB, C++, SQL, Bash; (working) Lean4.}
+  \resumeItem{ML/Stats}{PyTorch, scikit-learn, XGBoost; Bayesian modeling, conformal prediction (UQ), causal inference, robust estimation, nonparametrics, time-series, geospatial statistics.}
+  \resumeItem{Geospatial}{GeoPandas, Shapely, Rasterio, PostGIS, QGIS; EPSG:5070 workflows; hex tiling and network construction.}
+  \resumeItem{HPC/Systems}{Slurm job arrays, Apptainer/Singularity, CUDA-capable nodes, BeeGFS/CephFS; SSH tunneling, advisory file locks; profiling/monitoring at scale.}
+  \resumeItem{Data/DevOps}{Git/GitHub, DVC, MLflow/Weights\&Biases (exp.\ tracking), Make/Snakemake; testing \& CI basics.}
+  \resumeItem{Reproducibility}{Containerized pipelines, metadata/versioning, structured experiment logs, documentation and onboarding guides.}
+\resumeSubHeadingListEnd
+
+%------SERVICE & OUTREACH (optional)---------
+% \section{Service \& Outreach}
+% \resumeSubHeadingListStart
+%   \resumeItemWithoutTitle{Open-source contributions (selected): ...}
+%   \resumeItemWithoutTitle{Mentoring junior researchers/peers in HPC usage and experiment design.}
+% \resumeSubHeadingListEnd
+
+
+\end{document}

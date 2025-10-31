@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page Not Found — Sizhe (John) Zhang</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .center { display: grid; place-items: center; min-height: 60vh; text-align: center; }
+  </style>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://novaz03.github.io/" />
+  <meta property="og:title" content="404 — Page Not Found" />
+  <meta property="og:description" content="The page you’re looking for doesn’t exist." />
+</head>
+<body>
+  <header class="site">
+    <div class="max row">
+      <div class="brand">Sizhe (John) Zhang</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/index.html#projects">Projects</a>
+        <a href="/resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+  <main class="center">
+    <div class="card">
+      <h1 style="margin-top:0">404 — Page not found</h1>
+      <p>Sorry, the page you requested doesn’t exist. You can return to the homepage below.</p>
+      <p><a class="btn" href="/">Go to Home</a></p>
+    </div>
+  </main>
+  <footer>
+    <div class="max">
+      <small>© <span id="year"></span> Sizhe (John) Zhang</small>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+ </body>
+ </html>
+
