@@ -19,6 +19,15 @@
     .zoomed { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 96vw; max-height: 90vh; z-index: 1000; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
     .video-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
     iframe.embed { width: 100%; min-height: 640px; border: 1px solid #1f2937; border-radius: 10px; background: #0b1220; }
+    .stage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .stage-item { border: 1px solid #1f2937; border-radius: 12px; overflow: hidden; background: #0b1220; display: flex; flex-direction: column; }
+    .stage-thumb { position: relative; min-height: 160px; display: flex; align-items: flex-end; padding: 16px; font-weight: 600; letter-spacing: 0.4px; }
+    .stage-thumb span { position: relative; z-index: 1; }
+    .stage-thumb::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.28), transparent 65%); opacity: 0.4; }
+    .stage-thumb--poi { background: linear-gradient(135deg, #1d4ed8, #38bdf8); }
+    .stage-thumb--route { background: linear-gradient(135deg, #f97316, #fb7185); }
+    .stage-content { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .stage-content .btn { align-self: flex-start; }
   </style>
 </head>
 <body>
@@ -73,19 +82,29 @@
           </div>
         </div>
         <div class="card" style="margin-top:10px">
-          <h3 style="margin-top:0">Interactive Views</h3>
-          <p class="muted" style="margin-top:0">Embedded STAGE HTML (provided). If any embed is blocked by browser policies, use the direct links below.</p>
-          <div class="video-row">
-            <iframe class="embed" src="simulated_trajectories.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-            <iframe class="embed" src="hourly_trajectories_by_person_with_dots.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-            <iframe class="embed" src="ian_routes_visualization.html" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+          <h3 style="margin-top:0">Interactive Explorers</h3>
+          <p class="muted" style="margin-top:0">Open the full-size experiences below; thumbnails provide quick context without obstructing the maps.</p>
+          <div class="stage-grid">
+            <div class="stage-item">
+              <div class="stage-thumb stage-thumb--poi">
+                <span>POI-to-POI Trajectory Explorer</span>
+              </div>
+              <div class="stage-content">
+                <p>Follow simulated evacuation journeys through sequences of visited points of interest.</p>
+                <a class="btn" href="simulated_trajectories.html" target="_blank" rel="noopener">Open interactive map</a>
+              </div>
+            </div>
+            <div class="stage-item">
+              <div class="stage-thumb stage-thumb--route">
+                <span>Network Route Explorer</span>
+              </div>
+              <div class="stage-content">
+                <p>Inspect road-network-aware routes reconstructed between POIs with step annotations.</p>
+                <a class="btn" href="ian_routes_visualization.html" target="_blank" rel="noopener">Open interactive map</a>
+              </div>
+            </div>
           </div>
-          <p style="margin-top:8px">
-            Open directly: 
-            <a href="simulated_trajectories.html" target="_blank" rel="noopener">simulated_trajectories.html</a> · 
-            <a href="hourly_trajectories_by_person_with_dots.html" target="_blank" rel="noopener">hourly_trajectories_by_person_with_dots.html</a> · 
-            <a href="ian_routes_visualization.html" target="_blank" rel="noopener">ian_routes_visualization.html</a>
-          </p>
+          <p class="muted" style="margin-top:12px">Person numbers restart within each explorer. “Person 1” in the POI-to-POI view is not the same trajectory as “Person 1” in the Network Route view.</p>
         </div>
       </div>
 
